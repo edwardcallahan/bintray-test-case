@@ -12,7 +12,7 @@ import play.api.http.{ ContentTypes, HeaderNames }
 import play.api.libs.ws.WS
 import play.api.libs.ws.WSAuthScheme
 
-class TestApplication extends Controller {
+object TestApplication extends Controller {
   val config = ConfigFactory.load()
   lazy val authUser = config.getString("conductr-bintray.user")
   lazy val authKey = config.getString("conductr-bintray.key")
@@ -41,7 +41,7 @@ class TestApplication extends Controller {
               Ok.chunked(body).as(contentType)
           }
         } else {
-          System.out.println("SNAP")
+          System.out.println(s"SNAP ${response.status}")
           BadGateway
         }
     }
