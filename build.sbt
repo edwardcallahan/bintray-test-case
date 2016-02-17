@@ -10,6 +10,7 @@ libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
+  "com.netaporter" %% "scala-uri" % "0.4.13",
   "org.specs2" %% "specs2-core" % "3.0" % "test"
 )
 
